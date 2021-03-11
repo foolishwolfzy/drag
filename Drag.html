@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gbk">
+<title></title>
+<link charset="utf-8" rel="stylesheet" href="appstyle.css">
+</head>
+
+<style type="text/css">
+    .native_scroll {
+      overflow: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    .dragCotent{
+        background: #fafafa;
+        width: 500px;
+        height: 800px;
+        margin: 0 auto;
+    }
+    .dragList{
+        position: relative;
+    }
+    .dragList li{
+        background: blue;
+        position: relative;
+        color: white;
+        height: 30px;
+        width: 200px;
+        border-bottom: 1px solid white;
+    }
+
+    .dragItem{
+        width: 30px;
+        height: 30px;
+        background: #000;
+        cursor: move;
+    }
+    .row{
+        position: relative;
+        font-size: 0;
+        display: -webkit-flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .row div{
+        -webkit-flex: 1;
+        box-sizing: border-box;
+        background: #ff6600;
+        height: 100px;
+    }
+    .row .moveTarget{ 
+        width: 30px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color:rgba(0,0,0,0.5);
+        z-index: 999;
+        margin: 5px;
+        cursor: move;
+    }
+    .col{
+        margin: 5px;
+    }
+    
+</style>
+
+<body>
+    <div id="page-container">
+        <div class="apps_page">
+            <main role="main" class="authentication">
+                <!-- header S -->
+                <header class="nav-header">
+                    
+                </header>
+                <!-- header E -->
+                <!-- aside S -->
+                <aside class="aside aside-1">Aside 1</aside>
+                <!-- aside E -->
+                <!-- article S -->
+                <article class="content-body " data-role="container">
+                    <!-- <ul class="dragList" data-role="dragList">
+                        <li data-photo-hash="1" class="photo-item" data-action="drags"><div role="move" class="dragItem">1</div></li>
+                        <li data-photo-hash="2" class="photo-item" data-action="drags"><div role="move" class="dragItem">2</div></li>
+                        <li data-photo-hash="3" class="photo-item" data-action="drags"><div role="move" class="dragItem">3</div></li>
+                        <li data-photo-hash="4" class="photo-item" data-action="drags"><div role="move" class="dragItem">4</div></li>
+                        <li data-photo-hash="5" class="photo-item" data-action="drags"><div role="move" class="dragItem">5</div></li>
+                    </ul>
+                    
+                    <ul class="dragList" data-role="dragList">
+                        <li data-photo-hash="1" class="photo-item" draggable="true" data-action="drags"><div role="move" class="dragItem">1</div></li>
+                        <li data-photo-hash="2" class="photo-item" draggable="true" data-action="drags"><div role="move" class="dragItem">2</div></li>
+                        <li data-photo-hash="3" class="photo-item" draggable="true" data-action="drags"><div role="move" class="dragItem">3</div></li>
+                        <li data-photo-hash="4" class="photo-item" draggable="true" data-action="drags"><div role="move" class="dragItem">4</div></li>
+                        <li data-photo-hash="5" class="photo-item" draggable="true" data-action="drags"><div role="move" class="dragItem">5</div></li>
+                    </ul> -->
+
+                    <div class="dragCotent native_scroll" data-role="dragCotent">
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent" style="width:50px"></div>
+                            <div class="col" data-role="dragCotent" style="width:50px"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                        <div class="row photo-item" data-photo-hash="1">
+                            <div class = "moveTarget" data-role = "moveTarget"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                            <div class="col" data-role="dragCotent" style="width:50px"></div>
+                            <div class="col" data-role="dragCotent" style="width:50px"></div>
+                            <div class="col" data-role="dragCotent"></div>
+                        </div>
+                    </div>
+                    
+                </article >
+                <!-- article E -->
+                <!-- aside S -->
+                <aside class="aside aside-1">Aside 2</aside>
+                <!-- aside E -->
+            </main>
+        </div>
+    </div>
+    
+
+
+<script src="jquery.js"></script>
+<script>
+
+var $body = $('body');
+var $dragCotent = $('[data-role="dragCotent"]');
+var $dragList = $('[data-role="dragList"]');
+var  doc = window.document;
+
+//$dragList.mousedown(function(event) {
+$dragCotent.mousedown(function(event) {
+    photoListMouseDown(event); // 拖动图片的准备
+});
+
+function eventHalt(event) {
+    event.preventDefault && event.preventDefault();
+    event.stopPropagation && event.stopPropagation();
+}
+
+//图片li移动事件
+    function photoListMouseDown(event) {
+        var self = this,
+            target = event.target,
+            liEl,
+            liEls, tmpLiEl, tmpArr = [], tmpArrIndex = {};
+
+        if (target.getAttribute('data-role') != 'moveTarget') {
+            return false;
+        }
+
+        liEl = $(target).parent();
+        //liEl = $(target);
+
+        if (!liEl.attr('data-photo-hash')) {
+            return false;
+        }
+
+        console && console.log("Mouse Down");
+        console && console.log("_startPageX:" + event.pageX + "\n_startPageY:" + event.pageY);
+
+        self._startPageX = event.pageX;
+        self._startPageY = event.pageY;
+
+        eventHalt(event);
+
+        $(doc).bind('mousemove', function(event) {
+            eventHalt(event);
+
+            photoItemMove(event, liEl);
+        }).bind('mouseup', function(event) {
+                eventHalt(event);
+
+                $(this).unbind('mousemove').unbind('mouseup');
+
+                photoItemMoved(liEl);
+            });
+    }
+
+    function photoItemMove(event, el) {
+        var self = this,
+            sortableLiListIndex = self._sortableLiListIndex,
+            sortableLiList = self._sortableLiList,
+
+            currentPageX = event.pageX,//当前鼠标x坐标
+            currentPageY = event.pageY,//当前鼠标y坐标
+
+            startPageX = self._startPageX,//标签对象原始x坐标
+            startPageY = self._startPageY,//标签对象原始y坐标
+
+            offsetPageX = currentPageX - startPageX,//x轴偏移量
+            offsetPageY = currentPageY - startPageY,//y轴偏移量
+
+            prevEl = el.prev('.photo-item'), prevElWidth = prevEl ? prevEl.width() : null,
+            nextEl = el.next('.photo-item'), nextElWidth = nextEl ? nextEl.width() : null,
+
+            // topEl = prevEl.prev('.photo-item'), topElHeight = topEl ? topEl.height() : null,
+            // bottomEl = nextEl.next('.photo-item'), bottomElHeight = bottomEl ? bottomEl.height() : null,
+            topEl = prevEl, topElHeight = topEl ? topEl.height() : null,
+            bottomEl = nextEl, bottomElHeight = bottomEl ? bottomEl.height() : null,
+
+            f = 10, marginTB = 0;
+
+        console.log("    Moving...\n    currentPageX:" + currentPageX + "\n    currentPageY:" + currentPageY + "\n    offsetPageX:" + offsetPageX + "\n    offsetPageY:" + offsetPageY + "\n    topElHeight:" + topElHeight + "\n    bottomElHeight:" + bottomElHeight);
+
+        el.css({
+            left: offsetPageX,
+            top: offsetPageY
+        }).addClass('js-moving');
+
+        //一行有2列以上时才有向左向右移
+
+        // 向右移
+        // if (offsetPageX > 0 && nextElWidth && offsetPageX >= nextElWidth + f) {
+        //     el.insertAfter(nextEl);
+        //     self._startPageX = startPageX + nextElWidth + f;
+
+        //     el.css({
+        //         left: 0,
+        //         top: 0
+        //     });
+        // }
+
+        // 向左移
+        // if (offsetPageX < 0 && prevElWidth && -offsetPageX >= prevElWidth + f) {
+        //     el.insertBefore(prevEl);
+        //     self._startPageX = startPageX - prevElWidth - f;
+
+        //     el.css({
+        //         left: 0,
+        //         top: 0
+        //     });
+        // }
+
+        // 向下移
+        if (offsetPageY > 0 && bottomElHeight && offsetPageY >= bottomElHeight + f + marginTB * 2) {
+            el.insertAfter(nextEl);
+            //el.insertAfter(bottomEl);
+            self._startPageY = startPageY + bottomElHeight + marginTB * 2 + f;
+
+            el.css({
+                left: 0,
+                top: 0
+            });
+        }
+
+        // 向上移
+        if (offsetPageY < 0 && topElHeight && -offsetPageY >= topElHeight + f + marginTB * 2) {
+            el.insertBefore(prevEl);
+            //el.insertBefore(topEl);
+            self._startPageY = startPageY - topElHeight - marginTB * 2 - f;
+
+            el.css({
+                left: 0,
+                top: 0
+            });
+        }
+    }
+
+    /**
+     * 移动结束
+     * @param {JqELement} el 图片li element
+     */
+    function photoItemMoved(el) {
+        el && el.css({
+            left: 0,
+            top: 0
+        }).removeClass('js-moving');
+    }
+//=====================================================================================
+
+var eleDustbin = $('[data-role="dragCotent"]')[0], eleDrags = $(".photo-item"), lDrags = eleDrags.length, eleRemind = $(".dragremind")[0], eleDrag = null;
+for (var i=0; i<lDrags; i+=1) {
+    eleDrags[i].onselectstart = function() {
+        return false;
+    };
+    eleDrags[i].ondragstart = function(ev) {
+        /*拖拽开始*/
+        //拖拽效果
+        var $target = $(ev.currentTarget);
+        var data_photo_hash = $target.attr('data-photo-hash');
+        JSON.stringify
+        JSON.parse
+        ev.dataTransfer.effectAllowed = "move";
+        ev.dataTransfer.setData("text", data_photo_hash);
+        ev.dataTransfer.setDragImage(ev.target, 0, 0);
+        eleDrag = ev.target;
+        return true;
+    };
+    eleDrags[i].ondragend = function(ev) {
+        /*拖拽结束*/
+        ev.dataTransfer.clearData("text");
+        eleDrag = null;
+        console.log('ondragend')
+        return false
+    };
+}
+eleDustbin.ondragover = function(ev) {
+    /*拖拽元素在目标元素头上移动的时候*/
+    ev.preventDefault();
+    return true;
+};
+
+eleDustbin.ondragenter = function(ev) {
+    /*拖拽元素进入目标元素头上的时候*/
+    this.style.color = "#ffffff";
+    return true;
+};
+eleDustbin.ondrop = function(ev) {
+     console.log('ondrop');
+    /*拖拽元素进入目标元素头上，同时鼠标松开的时候*/
+    if (eleDrag) {
+        var data_photo_hash = ev.dataTransfer.getData("text");
+        var $curItem = $('[data-photo-hash="' + data_photo_hash + '"');
+        $(ev.target).append($curItem);
+    }
+    this.style.color = "#000000";
+    return false;
+};
+
+</script>
+</body>
+</html>
